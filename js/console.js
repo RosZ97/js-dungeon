@@ -13,9 +13,15 @@ const std = {
             }
         };
 
-        window.onerror = function(message, url, linenumber) {
-            std.log("JavaScript error: " + message + " on line " +
-                linenumber + " for " + url);
+        let baseError = console.error;
+        console.error = function() {
+            baseError.apply(console, arguments);
+
+            var args = Array.prototype.slice.call(arguments);
+            for(let i = 0; i < args.length; ++i) {
+                let node = std.createNode(args[i]);
+                std.dom.appendChild(node);
+            }
         };
     },
     log: function(msg) {
