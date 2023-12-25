@@ -6,9 +6,9 @@ const std = {
         console.log = function() {
             baseLog.apply(console, arguments);
 
-            var args = Array.prototype.slice.call(arguments);
-            for(var i=0;i<args.length;i++){
-                var node = std.createLogNode(args[i]);
+            let args = Array.prototype.slice.call(arguments);
+            for(let i=0;i<args.length;i++){
+                let node = std.createLogNode(args[i]);
                 std.dom.appendChild(node);
             }
         };
@@ -17,7 +17,7 @@ const std = {
         console.error = function() {
             baseError.apply(console, arguments);
 
-            var args = Array.prototype.slice.call(arguments);
+            let args = Array.prototype.slice.call(arguments);
             for(let i = 0; i < args.length; ++i) {
                 let node = std.createNode(args[i]);
                 std.dom.appendChild(node);
@@ -29,8 +29,8 @@ const std = {
         this.dom.appendChild(node);
     },
     createNode: function(msg) {
-        var node = document.createElement("div");
-        var textNode = document.createTextNode(msg);
+        let node = document.createElement("div");
+        let textNode = document.createTextNode(msg);
         node.appendChild(textNode);
         return node;
     }
