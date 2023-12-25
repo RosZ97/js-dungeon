@@ -25,8 +25,8 @@ const std = {
         };
     },
     log: function(msg) {
-        let node = this.createNode(msg);
-        this.dom.appendChild(node);
+        let node = std.createNode(msg);
+        std.dom.appendChild(node);
     },
     createNode: function(msg) {
         let node = document.createElement("div");
