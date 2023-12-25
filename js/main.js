@@ -3,5 +3,5 @@ window.onload = function() {
 
     console.log('test error');
 
-    std.kek();
+    throw new Error('This is an error');
 }
