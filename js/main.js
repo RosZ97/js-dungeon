@@ -3,5 +3,5 @@ window.onload = function() {
 
     console.log('test error');
 
-    throw new Error('This is an error');
+    // throw new Error('This is an error');
 }
