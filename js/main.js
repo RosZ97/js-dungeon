@@ -3,5 +3,5 @@ window.onload = function() {
 
     std.log('test log');
 
-    throw new Error('This is an error');
+    // throw new Error('This is an error');
 }
